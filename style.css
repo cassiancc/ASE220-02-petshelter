@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+html body {
+    font-family: 'Source Sans Pro';
+    font-weight: 500;
+}
+
+body .container h1 {
+    font-weight: 700;
+}
+
 .card-body {
     min-height: 8em;
 }
