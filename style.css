@@ -1,0 +1,13 @@
+.card-body {
+    min-height: 8em;
+}
+
+.card-img-top {
+    height: 15em;
+    object-fit: cover;
+}
+
+.card {
+    width: 25em;
+    margin: auto;
+}
