@@ -6,8 +6,13 @@ html body {
     font-weight: 500;
 }
 
-body .container h1 {
-    font-weight: 700;
+#title, .title {
+    font-weight: 700 !important ;
+    color: black;
+}
+
+a #title:hover, .title:hover {
+    color: #5656ad;
 }
 
 .card-body {
@@ -22,4 +27,12 @@ body .container h1 {
 .card {
     width: 25em;
     margin: auto;
+}
+
+.card.more-info {
+    width: 40em;
+}
+
+.card-max {
+    width: 100%;
 }
