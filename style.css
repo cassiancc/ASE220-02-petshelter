@@ -4,6 +4,7 @@
 html body {
     font-family: 'Source Sans Pro';
     font-weight: 500;
+    overflow-x: hidden;
 }
 
 #title, .title {
@@ -15,7 +16,7 @@ a #title:hover, .title:hover {
     color: #5656ad;
 }
 
-.card-body {
+.card-body.about-me {
     min-height: 8em;
 }
 
@@ -35,4 +36,13 @@ a #title:hover, .title:hover {
 
 .card-max {
     width: 100%;
+}
+
+.age {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.row .col {
+    margin-top: 1em;
 }

@@ -189,7 +189,7 @@ animals.forEach(function(animal) {
   <div class="col">
   <div class="card">
     <img src="./images/${animal.name.toLowerCase()}.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
+    <div class="card-body about-me">
       <h5 class="card-title">${animal.name}</h5>
       <p class="card-text">${animal.aboutMe}</p>
     </div>
@@ -199,7 +199,7 @@ animals.forEach(function(animal) {
         <img src="images/${animal.sex.toLowerCase()}_gender_icon.png" alt="Female Gender Icon" width="20" height="20"> ${animal.sex}
       </li>
       <li class="list-group-item">
-        <img src="images/six_candle.png" alt="${animal.age} Years Old" width="35" height="35"> Years Old
+        <img class="age" src="images/age_${animal.age}.png" alt="${animal.age} Years Old"> Years Old
       </li>
     </ul>
     <div class="card-body">
