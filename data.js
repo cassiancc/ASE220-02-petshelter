@@ -193,29 +193,65 @@ const animals = [
 ];
 
 
-animals.forEach(function(animal) {
-  document.querySelector(".row").innerHTML +=
-  `
-  <div class="col">
-  <div class="card">
-    <img src="./images/${animal.name.toLowerCase()}.jpg" class="card-img-top" alt="...">
-    <div class="card-body about-me">
-      <h5 class="card-title">${animal.name}</h5>
-      <p class="card-text">${animal.aboutMe}</p>
+
+function loadIndex() {
+  index = 0
+  animals.forEach(function(animal) {
+    document.querySelector(".row").innerHTML +=
+    `
+    <div class="col">
+    <div class="card">
+      <img src="./images/${animal.name.toLowerCase()}.webp" class="card-img-top" alt="...">
+      <div class="card-body about-me">
+        <h5 class="card-title">${animal.name}</h5>
+        <p class="card-text">${animal.aboutMe}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">${animal.type} / ${animal.breed}</li>
+        <li class="list-group-item">
+          <img src="images/${animal.sex.toLowerCase()}_gender_icon.png" alt="Female Gender Icon" width="20" height="20"> ${animal.sex}
+        </li>
+        <li class="list-group-item">
+          <img class="age" src="images/age_${animal.age}.png" alt="${animal.age} Years Old"> Years Old
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="detail.html?index=${index}" class="btn btn-primary">See more about ${animal.name}</a>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">${animal.type} / ${animal.breed}</li>
-      <li class="list-group-item">
-        <img src="images/${animal.sex.toLowerCase()}_gender_icon.png" alt="Female Gender Icon" width="20" height="20"> ${animal.sex}
-      </li>
-      <li class="list-group-item">
-        <img class="age" src="images/age_${animal.age}.png" alt="${animal.age} Years Old"> Years Old
-      </li>
-    </ul>
-    <div class="card-body">
-      <a href="bella/index.html" class="btn btn-primary">See more about ${animal.name}</a>
     </div>
-  </div>
-  </div>
+    `
+    index++
+  })
+}
+
+function loadDetail(index) {
+  const animal = animals[index]
+  document.getElementById(`details`).innerHTML += 
   `
-})
+  <div class="card more-info">
+          <div class="card-body">
+            <h5 class="card-title"><h1 id="content"></h1></h5>
+            <p class="card-text">${animal.aboutMe + animal.aboutMeFull}
+              </p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cat / Maine Coon</li>
+            <li class="list-group-item">✅ Spayed</li>
+            <li class="list-group-item">
+            <img src="images/${animal.sex.toLowerCase()}_gender_icon.png" alt="Female Gender Icon" width="20" height="20"> ${animal.sex}
+            </li>
+            <li class="list-group-item">
+            <img class="age" src="images/age_${animal.age}.png" alt="${animal.age} Years Old"> Years Old
+            </li>
+            <li class="list-group-item">⚕️ Health checked.</li>
+            <li class="list-group-item">💉 Vaccinations up to date.</li>
+            <li class="list-group-item">✅ Regularly dewormed.</li>
+            <li class="list-group-item">🗃️ Microchipped.</li>
+            <li class="list-group-item"><strong>Animal ID:</strong> 57281</li>
+            <li class="list-group-item"><strong>Microchip #:</strong> 981120019776432</li>
+          </ul>
+        </div>
+  `
+  console.log(index)
+}
