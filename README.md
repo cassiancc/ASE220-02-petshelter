@@ -4,4 +4,4 @@ Cassian Godsted - Initialized GitHub repository. Found images for pets and loade
 
 Jeffrey Perdue - Designed intial card view for homepage, including pet names, gender and gender images, age and age images, and added button that will go to pets individual pages. Created JS array for all pets based of provided PDF.
 
-Christian Lane - Filled out pages for Bella and Charlie using the format from Luna's. Fixed broken links on homepage and Luna's page to allow proper navigation.
+Christian Lane - Filled out pages for Bella and Charlie using the format from Luna's. Fixed broken links on homepage and Luna's page to allow proper navigation. Finished formatting data.js and details page to match data across pages.
