@@ -16,3 +16,12 @@ Cassian Godsted - Wrote initial code pet cards to load from JS onto the page, an
 Jeffrey Perdue - Created JS array for all pets based of provided PDF.
 
 Christian Lane - Finished formatting data.js and details page to match data across pages.
+
+## Assignment 4
+
+
+Cassian Godsted - Migrated JS array to JSON file and wrote code to load from JSON via fetch request.
+
+Jeffrey Perdue - 
+
+Christian Lane - 
