@@ -1,12 +1,11 @@
 
-
 async function loadIndex() {
   try {
     let connection = await fetch("data.json");
     animals = await connection.json();
   }
   catch (error) {
-      console.log(error, source)
+      console.log(error)
   }
   index = 0
   animals.forEach(function(animal) {
@@ -38,7 +37,14 @@ async function loadIndex() {
   })
 }
 
-function loadDetail(index) {
+async function loadDetail(index) {
+  try {
+    let connection = await fetch("data.json");
+    animals = await connection.json();
+  }
+  catch (error) {
+      console.log(error)
+  }
   const animal = animals[index]
   document.getElementById('animalImage').innerHTML +=
   `<img src="/images/${animal.name.toLowerCase()}.webp" class="card-max" alt="${animal.name} the ${animal.breed}">`
