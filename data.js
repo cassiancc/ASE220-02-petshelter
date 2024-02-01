@@ -5,7 +5,7 @@ async function loadIndex() {
     animals = await connection.json();
   }
   catch (error) {
-      console.log(error)
+      console.log(error);
   }
   index = 0
   animals.forEach(function(animal) {
@@ -28,13 +28,17 @@ async function loadIndex() {
         </li>
       </ul>
       <div class="card-body">
-        <a href="detail.html?index=${index}" class="btn btn-primary">See more about ${animal.name}</a>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#animal_modal" onclick="modalDataFill()">See more about ${animal.name}</button>
       </div>
     </div>
     </div>
     `
     index++
   })
+}
+
+function modalDataFill() {
+  console.log("test")
 }
 
 async function loadDetail(index) {
@@ -75,3 +79,4 @@ async function loadDetail(index) {
         </div>
   `
 }
+
