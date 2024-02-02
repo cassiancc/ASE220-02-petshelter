@@ -20,8 +20,8 @@ Christian Lane - Finished formatting data.js and details page to match data acro
 ## Assignment 4
 
 
-Cassian Godsted - Migrated JS array to JSON file and wrote code to load from JSON via fetch request.
+Cassian Godsted - Migrated JS array to JSON file and wrote code to load from JSON via fetch request. Fixed bugs resulting from new modal and pagination views.
 
-Jeffrey Perdue - 
+Jeffrey Perdue - Created pagination view with read more button.
 
-Christian Lane - 
+Christian Lane - Created a modal that pulled pet data on click.
