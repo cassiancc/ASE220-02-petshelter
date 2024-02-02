@@ -21,24 +21,50 @@ async function loadIndex() {
       <ul class="list-group list-group-flush">
         <li class="list-group-item">${animal.type} / ${animal.breed}</li>
         <li class="list-group-item">
-          <img src="images/${animal.sex.toLowerCase()}_gender_icon.png" alt="Female Gender Icon" width="20" height="20"> ${animal.sex}
+          <img src="images/${animal.sex.toLowerCase()}_gender_icon.png" alt="${animal.sex} Gender" Icon" width="20" height="20"> ${animal.sex}
         </li>
         <li class="list-group-item">
           <img class="age" src="images/age_${animal.age}.png" alt="${animal.age} Years Old"> Years Old
         </li>
       </ul>
       <div class="card-body">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#animal_modal" onclick="modalDataFill()">See more about ${animal.name}</button>
+        <button class="btn btn-primary" index="${index}">See more about ${animal.name}</button>
       </div>
     </div>
     </div>
     `
     index++
   })
+  let toggle_buttons = document.querySelectorAll(".card-body button")
+    toggle_buttons.forEach(function (toggle_button) {
+      toggle_button.addEventListener("click", function() {
+        modalDataFill(toggle_button.getAttribute("index"));
+        }
+      );
+    });
 }
 
-function modalDataFill() {
-  console.log("test")
+async function modalDataFill(index) {
+  try {
+    let connection = await fetch("data.json");
+    animals = await connection.json();
+  }
+  catch (error) {
+      console.log(error)
+  }
+  const animal = animals[index]
+  var modal = new bootstrap.Modal(document.querySelector("#animal_modal"), {
+    keyboard: false
+  });
+  document.querySelector(".modal-title").innerText = animal.name+" - "+animal.breed;
+
+  let footer = document.querySelector(".modal-footer")
+  footer.innerHTML = `
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <a href="/detail.html?index=${index}"><button type="button" class="btn btn-primary">Details page for ${animal.name}</button></a>
+  `;
+
+  modal.show();
 }
 
 async function loadDetail(index) {
