@@ -75,11 +75,11 @@ async function modalDataFill(index) {
     keyboard: false
   });
   document.querySelector(".modal-title").innerText = animal.name + " - " + animal.breed;
-
+  document.querySelector(".modal-body").innerHTML += `${animal.aboutMe + animal.aboutMeFull}`
   let footer = document.querySelector(".modal-footer");
   footer.innerHTML = `
   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-  <a href="/detail.html?index=${index}"><button type="button" class="btn btn-primary">Details page for ${animal.name}</button></a>
+  <a href="/detail.html?index=${index}"><button type="button" class="btn btn-primary">Learn more about ${animal.name}</button></a>
   `;
 
   modal.show();
