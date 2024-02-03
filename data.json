@@ -188,5 +188,386 @@
       ],
       "aboutMe": "Sophie is a young Ragdoll cat with a soft seal point coat and mesmerizing blue eyes.",
       "aboutMeFull": " She was found as a kitten and raised in a foster home. Sophie is incredibly affectionate, often seeking out laps to curl up in. She's playful and enjoys interactive toys, but she's also content to relax and watch the world go by. Sophie gets along well with other pets and would be an excellent addition to a loving family or individual looking for a gentle and loving companion."
-    }
+    },
+    {
+      "name": "Milo",
+      "type": "Dog",
+      "breed": "Golden Retriever",
+      "sex": "Male",
+      "color": "Golden",
+      "spayedNeutered": "Yes",
+      "age": 3,
+      "animalID": 71245,
+      "microchipNumber": 941000985476321,
+      "status": [
+        "Health checked.",
+        "Vaccinations up to date.",
+        "Regularly dewormed.",
+        "Microchipped."
+      ],
+      "aboutMe": "Milo is a friendly Golden Retriever with a shiny golden coat and a heartwarming smile.",
+      "aboutMeFull": " He was found wandering in a rural area and quickly won over the hearts of his rescuers with his gentle demeanor. Milo loves outdoor activities, especially swimming and fetching. He's incredibly sociable with both people and other dogs, making him an ideal family pet. His affectionate nature and intelligence make him easy to train and a joy to have around."
+    },
+    {
+      "name": "Doris",
+      "type": "Cat",
+      "breed": "Siamese",
+      "sex": "Female",
+      "color": "Seal Point",
+      "spayedNeutered": "Yes",
+      "age": 2,
+      "animalID": 82567,
+      "microchipNumber": 956000004123987,
+      "status": [
+        "Health checked.",
+        "Vaccinations up to date.",
+        "Regularly dewormed.",
+        "Microchipped."
+      ],
+      "aboutMe": "Doris is an elegant Siamese with striking blue eyes and a sleek seal point coat.",
+      "aboutMeFull": " She was surrendered by an owner who could no longer care for her. Doris is vocal and communicative, often 'talking' to her humans with soft meows. She loves interactive play, especially with toys that challenge her physically and mentally. Doris can be selective with her human friends but forms deep bonds with those she trusts. She'd be best suited for a quiet home without young children."
+    },
+    {
+      "name": "Frank",
+      "type": "Dog",
+      "breed": "Beagle",
+      "sex": "Male",
+      "color": "Tri-color",
+      "spayedNeutered": "Yes",
+      "age": 5,
+      "animalID": 63948,
+      "microchipNumber": 981000687654321,
+      "status": [
+        "Health checked.",
+        "Vaccinations up to date.",
+        "Regularly dewormed.",
+        "Microchipped."
+      ],
+      "aboutMe": "Frank is a curious Beagle with a distinctive tri-color coat and an ever-wagging tail.",
+      "aboutMeFull": " Rescued from a crowded shelter, Frank's keen sense of smell and love for exploration make him an adventurous companion. He enjoys long walks where he can sniff to his heart's content. Frank is friendly with other pets and children, making him a great addition to any family. His playful antics and joyful disposition can brighten any home."
+    },
+    {
+      "name": "Ariel",
+      "type": "Cat",
+      "breed": "Maine Coon",
+      "sex": "Female",
+      "color": "Tortoiseshell",
+      "spayedNeutered": "Yes",
+      "age": 4,
+      "animalID": 75432,
+      "microchipNumber": 972000321654987,
+      "status": [
+        "Health checked.",
+        "Vaccinations up to date.",
+        "Regularly dewormed.",
+        "Microchipped."
+      ],
+      "aboutMe": "Ariel is a majestic Maine Coon with a luxurious tortoiseshell coat and expressive green eyes.",
+      "aboutMeFull": " Found as a stray, she has adapted well to indoor life, showing a preference for cozy napping spots. Ariel enjoys interactive play and puzzles that stimulate her intelligent mind. She's independent but affectionate, often seeking out her human for quiet companionship. Ariel would fit well in a calm household where she can reign as the gentle queen she is."
+    },
+    {
+      "name": "Thor",
+      "type": "Dog",
+      "breed": "French Bulldog",
+      "sex": "Male",
+      "color": "Brindle",
+      "spayedNeutered": "Yes",
+      "age": 3,
+      "animalID": 68120,
+      "microchipNumber": 985112008765432,
+      "status": [
+        "Health checked.",
+        "Vaccinations up to date.",
+        "Regularly dewormed.",
+        "Microchipped."
+      ],
+      "aboutMe": "Thor is a charming French Bulldog with a distinctive brindle coat and an irresistible squishy face.",
+      "aboutMeFull": " Surrendered by a family who could no longer provide for him, Thor is adaptable and thrives in the company of humans and dogs alike. He loves short walks and play sessions but is just as happy snuggling on the couch. Due to his calm and loving nature, Thor would make a great companion for apartment dwellers or those with a laid-back lifestyle."
+    },
+{
+  "name": "Jean",
+  "type": "Dog",
+  "breed": "Labrador Retriever",
+  "sex": "Female",
+  "color": "Chocolate",
+  "spayedNeutered": "Yes",
+  "age": 4,
+  "animalID": 89234,
+  "microchipNumber": 987654321098765,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Jean is a loving Labrador with a glossy chocolate coat and friendly brown eyes.",
+  "aboutMeFull": " Rescued from a local park, she loves the outdoors and is always ready for a game of fetch or a swim. Jean gets along well with children and other pets, making her the perfect family dog. She has an easy-going personality but is also protective of her loved ones."
+},
+{
+  "name": "Drew",
+  "type": "Cat",
+  "breed": "Russian Blue",
+  "sex": "Male",
+  "color": "Blue",
+  "spayedNeutered": "Yes",
+  "age": 3,
+  "animalID": 65789,
+  "microchipNumber": 945678123456789,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Drew is a sleek Russian Blue with a silvery-blue coat and piercing green eyes.",
+  "aboutMeFull": " He was found in a neglected state but has blossomed into a confident and affectionate companion. Drew prefers a quiet environment where he can lounge in peace. He's quite playful when the mood strikes and enjoys interactive toys that engage his hunting instincts."
+},
+{
+  "name": "Ruby",
+  "type": "Dog",
+  "breed": "Border Collie",
+  "sex": "Female",
+  "color": "Black and White",
+  "spayedNeutered": "Yes",
+  "age": 2,
+  "animalID": 80321,
+  "microchipNumber": 998877665544332,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Ruby is an energetic Border Collie with a striking black and white coat and keen intelligence.",
+  "aboutMeFull": " She was rescued from a high-kill shelter and has a zest for life that's contagious. Ruby requires regular mental and physical stimulation, making her best suited for an active individual or family. She excels in agility training and would be a star in competitive sports."
+},
+{
+  "name": "Zoe",
+  "type": "Cat",
+  "breed": "Persian",
+  "sex": "Female",
+  "color": "White",
+  "spayedNeutered": "Yes",
+  "age": 5,
+  "animalID": 93456,
+  "microchipNumber": 953112345678901,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Zoe is a regal Persian with a luxurious white coat and deep, expressive eyes.",
+  "aboutMeFull": " Surrendered by a breeder, she prefers the finer things in life, enjoying long, lazy days basking in the sunlight or curled up on a soft pillow. Zoe is gentle and prefers a calm environment where she can reign as the queen of her domain. She requires regular grooming to maintain her beautiful coat."
+},
+{
+  "name": "Toby",
+  "type": "Dog",
+  "breed": "Cocker Spaniel",
+  "sex": "Male",
+  "color": "Golden",
+  "spayedNeutered": "Yes",
+  "age": 6,
+  "animalID": 71289,
+  "microchipNumber": 912345678987654,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Toby is a gentle Cocker Spaniel with soft, golden fur and soulful brown eyes.",
+  "aboutMeFull": " He was given up by a family who could no longer care for him. Toby is affectionate and loves being close to his humans, making him a great lap dog. He enjoys leisurely walks and is good with children and other pets. Toby's sweet nature makes him a comforting companion."
+},
+{
+  "name": "Jasper",
+  "type": "Cat",
+  "breed": "Bengal",
+  "sex": "Male",
+  "color": "Spotted",
+  "spayedNeutered": "Yes",
+  "age": 2,
+  "animalID": 82543,
+  "microchipNumber": 987123456789012,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Jasper is a dynamic Bengal with a striking spotted coat that mirrors his wild ancestry.",
+  "aboutMeFull": " Found as a stray, he's full of energy and loves to climb and explore. Jasper is highly intelligent and responds well to interactive play and puzzle toys. He would thrive in an environment where he can satisfy his curiosity and need for activity."
+},
+{
+  "name": "Rosie",
+  "type": "Dog",
+  "breed": "Shih Tzu",
+  "sex": "Female",
+  "color": "White and Brown",
+  "spayedNeutered": "Yes",
+  "age": 7,
+  "animalID": 64820,
+  "microchipNumber": 921234567890123,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Rosie is a charming Shih Tzu with a fluffy white and brown coat and a loving, playful demeanor.",
+  "aboutMeFull": " Rescued from an overcrowded home, she adores human attention and will follow her owners around with loyal devotion. Rosie enjoys short walks and is perfectly content with indoor play. Her gentle nature makes her suitable for families with older children or seniors."
+},
+{
+  "name": "Felix",
+  "type": "Cat",
+  "breed": "American Shorthair",
+  "sex": "Male",
+  "color": "Tabby",
+  "spayedNeutered": "Yes",
+  "age": 3,
+  "animalID": 56789,
+  "microchipNumber": 987654321234567,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Felix is a classic American Shorthair tabby with a striking pattern and a playful personality.",
+  "aboutMeFull": " He was found in a community cat colony and has adapted well to indoor life. Felix is curious and enjoys exploring his surroundings, but he also loves lounging in sunny spots. He's sociable with other cats and would do well in a multi-pet household."
+},
+{
+  "name": "Buddy",
+  "type": "Dog",
+  "breed": "Dachshund",
+  "sex": "Male",
+  "color": "Red",
+  "spayedNeutered": "Yes",
+  "age": 5,
+  "animalID": 70123,
+  "microchipNumber": 900123456789012,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Buddy is a spirited Dachshund with a glossy red coat and an adventurous spirit.",
+  "aboutMeFull": " He was rescued from a busy city street and loves to burrow and investigate his environment. Despite his small size, Buddy has a big personality and enjoys being the center of attention. He's best suited for an adult-only home where he can be the star."
+},
+{
+  "name": "Cleo",
+  "type": "Cat",
+  "breed": "Sphynx",
+  "sex": "Female",
+  "color": "Peach",
+  "spayedNeutered": "Yes",
+  "age": 4,
+  "animalID": 83456,
+  "microchipNumber": 953214567890123,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Cleo is a captivating Sphynx with a smooth peach skin and large, lemon-shaped eyes.",
+  "aboutMeFull": " Surrendered due to her previous owner's allergies, she thrives on human interaction and will often seek out a warm lap. Cleo enjoys interactive games and can be quite vocal in her demands for attention. Her unique appearance and affectionate nature make her a fascinating companion."
+},
+{
+  "name": "Piper",
+  "type": "Dog",
+  "breed": "Australian Shepherd",
+  "sex": "Female",
+  "color": "Merle",
+  "spayedNeutered": "Yes",
+  "age": 4,
+  "animalID": 98012,
+  "microchipNumber": 991234567890234,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Piper is a vibrant Australian Shepherd with a stunning merle coat and bright, attentive eyes.",
+  "aboutMeFull": " Found as a stray in a rural area, she's highly intelligent and thrives on mental and physical challenges. Piper is an excellent candidate for agility training and loves activities that engage her herding instincts. She's loyal and protective, making her an ideal companion for an active lifestyle."
+},
+{
+  "name": "Simba",
+  "type": "Cat",
+  "breed": "Abyssinian",
+  "sex": "Male",
+  "color": "Ruddy",
+  "spayedNeutered": "Yes",
+  "age": 3,
+  "animalID": 89123,
+  "microchipNumber": 992345678901234,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Simba is an active Abyssinian with a striking ruddy coat and an adventurous spirit.",
+  "aboutMeFull": " He was surrendered by a family moving overseas. Simba is extremely playful and loves to climb, jump, and explore every nook and cranny. His intelligence and curiosity make him an entertaining companion, though he may need a watchful eye to keep him out of mischief."
+},
+{
+  "name": "Bailey",
+  "type": "Dog",
+  "breed": "Pug",
+  "sex": "Female",
+  "color": "Fawn",
+  "spayedNeutered": "Yes",
+  "age": 6,
+  "animalID": 87654,
+  "microchipNumber": 993456789012345,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Bailey is a charming Pug with a playful personality and a soft fawn coat.",
+  "aboutMeFull": " Rescued from a puppy mill, she has shown remarkable resilience and joy for life. Bailey enjoys short walks and lots of playtime, but she's also content to snuggle up for a nap. Her expressive face and loving nature make her a delightful companion for anyone looking for a low-energy pet."
+},
+{
+  "name": "Willow",
+  "type": "Cat",
+  "breed": "Ragdoll",
+  "sex": "Female",
+  "color": "Blue Point",
+  "spayedNeutered": "Yes",
+  "age": 5,
+  "animalID": 91234,
+  "microchipNumber": 994567890123456,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Willow is a serene Ragdoll with luxurious blue point markings and an affectionate disposition.",
+  "aboutMeFull": " She was found abandoned and has since become a loving and gentle soul who prefers quiet environments. Willow's favorite activities include being brushed and pampered, and she has a habit of going limp with joy in her human's arms. She would make a perfect pet for someone seeking a calm and loyal feline friend."
+},
+{
+  "name": "Gizmo",
+  "type": "Dog",
+  "breed": "Shetland Sheepdog",
+  "sex": "Male",
+  "color": "Sable",
+  "spayedNeutered": "Yes",
+  "age": 3,
+  "animalID": 95432,
+  "microchipNumber": 995678901234567,
+  "status": [
+    "Health checked.",
+    "Vaccinations up to date.",
+    "Regularly dewormed.",
+    "Microchipped."
+  ],
+  "aboutMe": "Gizmo is a smart Shetland Sheepdog with a fluffy sable coat and an eager-to-please attitude.",
+  "aboutMeFull": " He was given up by a family unable to meet his needs for activity and mental stimulation. Gizmo excels in obedience and agility training, and his herding instincts make him a natural at keeping an eye on family members. He's friendly, good with children, and adapts well to different living environments, making him a versatile companion."
+}
+
 ]
