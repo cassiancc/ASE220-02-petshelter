@@ -22,6 +22,6 @@ Christian Lane - Finished formatting data.js and details page to match data acro
 
 Cassian Godsted - Migrated JS array to JSON file and wrote code to load from JSON via fetch request. Fixed bugs resulting from new modal and pagination views.
 
-Jeffrey Perdue - Created pagination view with read more button.
+Jeffrey Perdue - Created pagination view with read more button. Added 20 more pets to JSON data array.
 
 Christian Lane - Created a modal that pulled pet data on click.
