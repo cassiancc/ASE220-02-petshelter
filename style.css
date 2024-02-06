@@ -21,12 +21,12 @@ a #title:hover, .title:hover {
 }
 
 .card-img-top {
-    height: 15em;
+    height: 15vmax;
     object-fit: cover;
 }
 
 .card {
-    width: 25em;
+    width: 24vmax;
     margin: auto;
 }
 
