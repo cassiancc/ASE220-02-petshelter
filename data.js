@@ -26,7 +26,7 @@ function displayAnimals(start, count) {
   for (let i = start; i < end && i < animals.length; i++) {
     const animal = animals[i];
     container.innerHTML += `
-      <div class="col">
+      <div class="col-lg-4 col-sm-6">
         <div class="card">
           <img src="images/${animal.name.toLowerCase()}.webp" class="card-img-top" alt="...">
           <div class="card-body about-me">
