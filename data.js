@@ -135,30 +135,53 @@ var editElement;
 $(()=>{
   $('#btn-pet-add').on('click',function(){
     const container = document.querySelector("#cards-container");
-    let name = $('#add-pet-name').val()
-    let aboutMe = $('#add-pet-desc').val()
-    let breed = $('#add-pet-breed').val()
-    let type = $('#add-pet-type').val()
-    let val = $('#add-pet-name').val()
+    const image = $('#add-pet-image').val()
+    const val = $('#add-pet-name').val()
+    let aboutMeFull = $('#add-pet-desc').val()
+    aboutMe = aboutMeFull.split(". ")[0]
+    aboutMeFull = aboutMeFull.split(". ")
+    aboutMeFull.splice(0, 1)
+    console.log(aboutMeFull)
+    const pet = {
+      "name": $('#add-pet-name').val(),
+      "type": $('#add-pet-type').val(),
+      "breed": $('#add-pet-breed').val(),
+      "sex": "Female",
+      "color": "Tortoiseshell",
+      "spayedNeutered": "Yes",
+      "age": $('#add-pet-age').val(),
+      "animalID": 75432,
+      "microchipNumber": 972000321654987,
+      "status": [
+        "Health checked.",
+        "Vaccinations up to date.",
+        "Regularly dewormed.",
+        "Microchipped."
+      ],
+      "aboutMe": aboutMe,
+      "aboutMeFull":  aboutMeFull
+    }
+
+
     container.innerHTML += `
       <div class="col-lg-4 col-sm-6">
         <div class="card">
-          <img src="images/${val}.webp" class="card-img-top" alt="...">
+          <img src="${image}" class="card-img-top" alt="...">
           <div class="card-body about-me">
-            <h5 class="card-title">${name}</h5>
-            <p class="card-text">${aboutMe}</p>
+            <h5 class="card-title">${pet.name}</h5>
+            <p class="card-text">${pet.aboutMe}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${type} / ${breed}</li>
+            <li class="list-group-item">${pet.type} / ${pet.breed}</li>
             <li class="list-group-item">
-              <img src="images/${val}_gender_icon.png" alt="${val} Gender Icon" width="20" height="20"> ${val}
+              <img src="images/${pet.gender}_gender_icon.png" alt="${pet.gender} Gender Icon" width="20" height="20"> ${pet.gender}
             </li>
             <li class="list-group-item">
-              <img class="age" src="images/age_${val}.png" alt="${val} Years Old"> ${val} Years Old
+              <img class="age" src="images/age_${pet.age}.png" alt="${pet.age} Years Old"> ${pet.age} Years Old
             </li>
           </ul>
           <div class="card-body">
-            <button class="btn btn-primary" index="${animals.length}">See more about ${name}</button>
+            <button class="btn btn-primary" index="${animals.length}">See more about ${pet.name}</button>
           </div>
         </div>
       </div>
@@ -166,7 +189,7 @@ $(()=>{
     // container.setAttribute('class','list-group-item');
     $('#addpetModal').modal('hide');
     // $('#list').append(li);
-    animals.push(val);
+    animals.push(pet);
     $('#addpetModal textarea').val('');
     console.log(animals);
   });
