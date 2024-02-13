@@ -131,24 +131,25 @@ async function loadDetail(index) {
   `;
 }
 
-
-
-var petArray=[];
 var editElement;
 $(()=>{
   $('#btn-pet-add').on('click',function(){
     const container = document.querySelector("#cards-container");
-    let val = $('#addpetModal textarea').val()
+    let name = $('#add-pet-name').val()
+    let aboutMe = $('#add-pet-desc').val()
+    let breed = $('#add-pet-breed').val()
+    let type = $('#add-pet-type').val()
+    let val = $('#add-pet-name').val()
     container.innerHTML += `
       <div class="col-lg-4 col-sm-6">
         <div class="card">
           <img src="images/${val}.webp" class="card-img-top" alt="...">
           <div class="card-body about-me">
-            <h5 class="card-title">${val}</h5>
-            <p class="card-text">${val}</p>
+            <h5 class="card-title">${name}</h5>
+            <p class="card-text">${aboutMe}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${val} / ${val}</li>
+            <li class="list-group-item">${type} / ${breed}</li>
             <li class="list-group-item">
               <img src="images/${val}_gender_icon.png" alt="${val} Gender Icon" width="20" height="20"> ${val}
             </li>
@@ -157,7 +158,7 @@ $(()=>{
             </li>
           </ul>
           <div class="card-body">
-            <button class="btn btn-primary" index="${animals.length}">See more about ${val}</button>
+            <button class="btn btn-primary" index="${animals.length}">See more about ${name}</button>
           </div>
         </div>
       </div>
@@ -169,25 +170,5 @@ $(()=>{
     $('#addpetModal textarea').val('');
     console.log(animals);
   });
-  $(document).on('click','.btn-danger',function(){
-    petArray.splice(petArray.indexOf($(this).parents('li').find('.col-lg-9').text()),1);
-    $(this).parents('li').remove();
-    console.log(petArray);
-  });
-  $(document).on('click','li .btn-primary',function(){
-    $(this).parents('li').find('.col-lg-9').css('text-decoration','line-through');
-    $(this).remove();
-  });
-  $(document).on('click','.btn-warning',function(){
-    editElement=$(this).parents('li')[0];
-    $('#editpetModal').modal('show');
-    $('#editpetModal textarea').val($(this).parents('li').find('.col-lg-9').text());
-  });
-  $(document).on('click','#btn-pet-edit',function(){
-    petArray.splice(petArray.indexOf($(editElement).find('.col-lg-9').text()),1,$('#editpetModal textarea').val());
-    $(editElement).find('.col-lg-9').text($('#editpetModal textarea').val());
-    $('#editpetModal textarea').val('');
-    $('#editpetModal').modal('hide');
-    console.log(petArray);
-  });
+
 });
