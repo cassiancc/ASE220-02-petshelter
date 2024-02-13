@@ -141,7 +141,6 @@ $(()=>{
     aboutMe = aboutMeFull.split(". ")[0]
     aboutMeFull = aboutMeFull.split(". ")
     aboutMeFull.splice(0, 1)
-    console.log(aboutMeFull)
     const pet = {
       "name": $('#add-pet-name').val(),
       "type": $('#add-pet-type').val(),
