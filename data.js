@@ -32,6 +32,7 @@ function displayAnimals(start, count) {
   const end = start + count;
   for (let i = start; i < end && i < animals.length; i++) {
     const animal = animals[i];
+    //Read image data if present, default to local image if not.
     if (animal.image != undefined) {
       image = animal.image
     }
@@ -76,13 +77,6 @@ function attachEventListeners() {
 }
 
 async function animalModalDataFill(index) {
-  // try {
-  //   let connection = await fetch("data.json");
-  //   animals = await connection.json();
-  // }
-  // catch (error) {
-  //     console.log(error)
-  // }
   const animal = animals[index];
   let am = document.querySelector("#animal_modal")
   var animalModal = new bootstrap.Modal(am, {
@@ -140,10 +134,12 @@ async function loadDetail(index) {
 var editElement;
 $(()=>{
   $('#btn-pet-add').on('click',function(){
+    //about me - seperate first sentence from rest of description
     let aboutMeFull = $('#add-pet-desc').val()
     aboutMe = aboutMeFull.split(". ")[0]
     aboutMeFull = aboutMeFull.split(". ")
     aboutMeFull.splice(0, 1)
+    //create a pet element from results of the modal.
     const pet = {
       "name": $('#add-pet-name').val(),
       "type": $('#add-pet-type').val(),
@@ -165,17 +161,17 @@ $(()=>{
       "aboutMeFull":  aboutMeFull
     }
 
+    //add the pet as the first element in our array of pets.
     animals.splice(0,0, pet);
 
-
+    //re-display the card container with the new pet first.
     document.getElementById("cards-container").innerHTML = ""
     displayAnimals(0, itemsPerPage); // Display initial set of animals
 
-    // container.setAttribute('class','list-group-item');
+    // hide the add pet modal as the new pet is added.
     $('#addpetModal').modal('hide');
-    // $('#list').append(li);
+    // clear the textbox - need to redo this after all inputs are there.
     $('#addpetModal textarea').val('');
-    console.log(animals);
   });
 
 });
