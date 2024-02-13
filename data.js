@@ -125,3 +125,62 @@ async function loadDetail(index) {
 
 
 loadIndex();
+
+
+var petArray=[];
+var editElement;
+$(()=>{
+  $(document).on('click','#btn-pet-add',function(){
+    const container = document.querySelector("#cards-container");
+    container.innerHTML += `
+      <div class="col-lg-4 col-sm-6">
+        <div class="card">
+          <img src="images/${$('#addpetmodal textarea').val()}.webp" class="card-img-top" alt="...">
+          <div class="card-body about-me">
+            <h5 class="card-title">${$('#addpetModal textarea').val()}</h5>
+            <p class="card-text">${$('#addpetmodal textarea').val()}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${$('#addpetmodal textarea').val()} / ${$('#addpetmodal textarea').val()}</li>
+            <li class="list-group-item">
+              <img src="images/${$('#addpetmodal textarea').val()}_gender_icon.png" alt="${$('#addpetmodal textarea').val()} Gender Icon" width="20" height="20"> ${$('#addpetmodal textarea').val()}
+            </li>
+            <li class="list-group-item">
+              <img class="age" src="images/age_${$('#addpetmodal textarea').val()}.png" alt="${$('#addpetmodal textarea').val()} Years Old"> ${$('#addpetmodal textarea').val()} Years Old
+            </li>
+          </ul>
+          <div class="card-body">
+            <button class="btn btn-primary" index="${animals.length}">See more about ${$('#addpetModal textarea').val()}</button>
+          </div>
+        </div>
+      </div>
+    `;
+    // container.setAttribute('class','list-group-item');
+    $('#addpetModal').modal('hide');
+    // $('#list').append(li);
+    animals.push($('#addpetModal textarea').val());
+    $('#addpetModal textarea').val('');
+    console.log(animals);
+  });
+  $(document).on('click','.btn-danger',function(){
+    petArray.splice(petArray.indexOf($(this).parents('li').find('.col-lg-9').text()),1);
+    $(this).parents('li').remove();
+    console.log(petArray);
+  });
+  $(document).on('click','li .btn-primary',function(){
+    $(this).parents('li').find('.col-lg-9').css('text-decoration','line-through');
+    $(this).remove();
+  });
+  $(document).on('click','.btn-warning',function(){
+    editElement=$(this).parents('li')[0];
+    $('#editpetModal').modal('show');
+    $('#editpetModal textarea').val($(this).parents('li').find('.col-lg-9').text());
+  });
+  $(document).on('click','#btn-pet-edit',function(){
+    petArray.splice(petArray.indexOf($(editElement).find('.col-lg-9').text()),1,$('#editpetModal textarea').val());
+    $(editElement).find('.col-lg-9').text($('#editpetModal textarea').val());
+    $('#editpetModal textarea').val('');
+    $('#editpetModal').modal('hide');
+    console.log(petArray);
+  });
+});
