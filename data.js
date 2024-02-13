@@ -32,10 +32,16 @@ function displayAnimals(start, count) {
   const end = start + count;
   for (let i = start; i < end && i < animals.length; i++) {
     const animal = animals[i];
+    if (animal.image != undefined) {
+      image = animal.image
+    }
+    else {
+      image = `images/${animal.name.toLowerCase()}.webp`
+    }
     container.innerHTML += `
       <div class="col-lg-4 col-sm-6">
         <div class="card">
-          <img src="images/${animal.name.toLowerCase()}.webp" class="card-img-top" alt="...">
+          <img src="${image}" class="card-img-top" alt="...">
           <div class="card-body about-me">
             <h5 class="card-title">${animal.name}</h5>
             <p class="card-text">${animal.aboutMe}</p>
@@ -134,9 +140,6 @@ async function loadDetail(index) {
 var editElement;
 $(()=>{
   $('#btn-pet-add').on('click',function(){
-    const container = document.querySelector("#cards-container");
-    const image = $('#add-pet-image').val()
-    const val = $('#add-pet-name').val()
     let aboutMeFull = $('#add-pet-desc').val()
     aboutMe = aboutMeFull.split(". ")[0]
     aboutMeFull = aboutMeFull.split(". ")
@@ -149,6 +152,7 @@ $(()=>{
       "color": "Tortoiseshell",
       "spayedNeutered": "Yes",
       "age": $('#add-pet-age').val(),
+      "image": $('#add-pet-image').val(),
       "animalID": 75432,
       "microchipNumber": 972000321654987,
       "status": [
