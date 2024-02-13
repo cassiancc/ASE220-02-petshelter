@@ -17,6 +17,13 @@ async function loadIndex() {
     } else {
       this.style.display = 'none'; // Hide button if there are no more animals to show
     }
+  }); 
+  
+  document.querySelector("#addpetButton").addEventListener("click", function() {
+    let modal = document.querySelector("#addpetModal");
+    var addPetModal = new bootstrap.Modal(modal, {keyboard:false});
+    console.log("test");
+    addPetModal.show();
   });
 }
 
@@ -57,12 +64,12 @@ function attachEventListeners() {
   let toggle_buttons = document.querySelectorAll(".card-body button");
   toggle_buttons.forEach(function (toggle_button) {
     toggle_button.addEventListener("click", function() {
-      modalDataFill(toggle_button.getAttribute("index"));
+      animalModalDataFill(toggle_button.getAttribute("index"));
     });
   });
 }
 
-async function modalDataFill(index) {
+async function animalModalDataFill(index) {
   try {
     let connection = await fetch("data.json");
     animals = await connection.json();
@@ -71,18 +78,19 @@ async function modalDataFill(index) {
       console.log(error)
   }
   const animal = animals[index];
-  var modal = new bootstrap.Modal(document.querySelector("#animal_modal"), {
+  let am = document.querySelector("#animal_modal")
+  var animalModal = new bootstrap.Modal(am, {
     keyboard: false
   });
-  document.querySelector(".modal-title").innerText = animal.name + " - " + animal.breed;
-  document.querySelector(".modal-body").innerHTML = `${animal.aboutMe + animal.aboutMeFull}`
-  let footer = document.querySelector(".modal-footer");
+  am.querySelector(".modal-title").innerText = animal.name + " - " + animal.breed;
+  am.querySelector(".modal-body").innerHTML = `${animal.aboutMe + animal.aboutMeFull}`
+  let footer = am.querySelector(".modal-footer");
   footer.innerHTML = `
   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
   <a href="/detail.html?index=${index}"><button type="button" class="btn btn-primary">Learn more about ${animal.name}</button></a>
   `;
 
-  modal.show();
+  animalModal.show();
 }
 
 async function loadDetail(index) {
@@ -123,3 +131,63 @@ async function loadDetail(index) {
   `;
 }
 
+
+
+var petArray=[];
+var editElement;
+$(()=>{
+  $('#btn-pet-add').on('click',function(){
+    const container = document.querySelector("#cards-container");
+    let val = $('#addpetModal textarea').val()
+    container.innerHTML += `
+      <div class="col-lg-4 col-sm-6">
+        <div class="card">
+          <img src="images/${val}.webp" class="card-img-top" alt="...">
+          <div class="card-body about-me">
+            <h5 class="card-title">${val}</h5>
+            <p class="card-text">${val}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${val} / ${val}</li>
+            <li class="list-group-item">
+              <img src="images/${val}_gender_icon.png" alt="${val} Gender Icon" width="20" height="20"> ${val}
+            </li>
+            <li class="list-group-item">
+              <img class="age" src="images/age_${val}.png" alt="${val} Years Old"> ${val} Years Old
+            </li>
+          </ul>
+          <div class="card-body">
+            <button class="btn btn-primary" index="${animals.length}">See more about ${val}</button>
+          </div>
+        </div>
+      </div>
+    `;
+    // container.setAttribute('class','list-group-item');
+    $('#addpetModal').modal('hide');
+    // $('#list').append(li);
+    animals.push(val);
+    $('#addpetModal textarea').val('');
+    console.log(animals);
+  });
+  $(document).on('click','.btn-danger',function(){
+    petArray.splice(petArray.indexOf($(this).parents('li').find('.col-lg-9').text()),1);
+    $(this).parents('li').remove();
+    console.log(petArray);
+  });
+  $(document).on('click','li .btn-primary',function(){
+    $(this).parents('li').find('.col-lg-9').css('text-decoration','line-through');
+    $(this).remove();
+  });
+  $(document).on('click','.btn-warning',function(){
+    editElement=$(this).parents('li')[0];
+    $('#editpetModal').modal('show');
+    $('#editpetModal textarea').val($(this).parents('li').find('.col-lg-9').text());
+  });
+  $(document).on('click','#btn-pet-edit',function(){
+    petArray.splice(petArray.indexOf($(editElement).find('.col-lg-9').text()),1,$('#editpetModal textarea').val());
+    $(editElement).find('.col-lg-9').text($('#editpetModal textarea').val());
+    $('#editpetModal textarea').val('');
+    $('#editpetModal').modal('hide');
+    console.log(petArray);
+  });
+});
