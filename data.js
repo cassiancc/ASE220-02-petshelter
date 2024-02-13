@@ -70,13 +70,13 @@ function attachEventListeners() {
 }
 
 async function animalModalDataFill(index) {
-  try {
-    let connection = await fetch("data.json");
-    animals = await connection.json();
-  }
-  catch (error) {
-      console.log(error)
-  }
+  // try {
+  //   let connection = await fetch("data.json");
+  //   animals = await connection.json();
+  // }
+  // catch (error) {
+  //     console.log(error)
+  // }
   const animal = animals[index];
   let am = document.querySelector("#animal_modal")
   var animalModal = new bootstrap.Modal(am, {
@@ -190,6 +190,7 @@ $(()=>{
     // $('#list').append(li);
     animals.push(pet);
     $('#addpetModal textarea').val('');
+    attachEventListeners(); // Re-attach event listeners to new buttons
     console.log(animals);
   });
 
