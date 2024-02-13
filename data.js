@@ -123,5 +123,3 @@ async function loadDetail(index) {
   `;
 }
 
-
-loadIndex();
