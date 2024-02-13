@@ -161,36 +161,16 @@ $(()=>{
       "aboutMeFull":  aboutMeFull
     }
 
+    animals.splice(0,0, pet);
 
-    container.innerHTML += `
-      <div class="col-lg-4 col-sm-6">
-        <div class="card">
-          <img src="${image}" class="card-img-top" alt="...">
-          <div class="card-body about-me">
-            <h5 class="card-title">${pet.name}</h5>
-            <p class="card-text">${pet.aboutMe}</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">${pet.type} / ${pet.breed}</li>
-            <li class="list-group-item">
-              <img src="images/${pet.gender}_gender_icon.png" alt="${pet.gender} Gender Icon" width="20" height="20"> ${pet.gender}
-            </li>
-            <li class="list-group-item">
-              <img class="age" src="images/age_${pet.age}.png" alt="${pet.age} Years Old"> ${pet.age} Years Old
-            </li>
-          </ul>
-          <div class="card-body">
-            <button class="btn btn-primary" index="${animals.length}">See more about ${pet.name}</button>
-          </div>
-        </div>
-      </div>
-    `;
+
+    document.getElementById("cards-container").innerHTML = ""
+    displayAnimals(0, itemsPerPage); // Display initial set of animals
+
     // container.setAttribute('class','list-group-item');
     $('#addpetModal').modal('hide');
     // $('#list').append(li);
-    animals.push(pet);
     $('#addpetModal textarea').val('');
-    attachEventListeners(); // Re-attach event listeners to new buttons
     console.log(animals);
   });
 
