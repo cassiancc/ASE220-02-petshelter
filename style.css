@@ -19,6 +19,10 @@ a #title:hover, .title:hover {
     min-height: 8em;
 }
 
+.card-body {
+    width: 94%;
+}
+
 .col-lg-4 {
     margin-bottom: 5px;
 }
