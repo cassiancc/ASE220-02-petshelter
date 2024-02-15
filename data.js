@@ -115,7 +115,7 @@ function saveEditedAnimal(index) {
     animal.aboutMe = document.getElementById('edit-pet-desc').value;
 
     $('#editPetModal').modal('hide');
-    displayAnimals(0, index, false);
+    displayAnimals(0, animalsVisible, false);
 }
 
 function animalModalDataFill(index) {
