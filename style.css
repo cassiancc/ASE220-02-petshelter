@@ -23,6 +23,13 @@ a #title:hover, .title:hover {
     width: 94%;
 }
 
+.radio-label {
+    margin-right: .5em;
+}
+.radio-label input {
+    margin-right: .2em;
+}
+
 .col-lg-4 {
     margin-bottom: 5px;
 }
