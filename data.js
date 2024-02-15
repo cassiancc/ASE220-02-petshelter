@@ -152,8 +152,13 @@ $('#btn-pet-add').on('click', function() {
     animals.unshift(pet);
     displayAnimals(0, itemsPerPage);
     $('#addpetModal').modal('hide');
+    $(".modal-backdrop").remove(); 
 });
 
+$('#btn-pet-add-close').on('click', function() {
+    $(".modal-backdrop").remove();
+
+});
 
 
 
