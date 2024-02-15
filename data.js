@@ -99,6 +99,14 @@ function fillEditModal(index) {
     document.getElementById('edit-pet-age').value = animal.age;
     document.getElementById('edit-pet-desc').value = animal.aboutMe;
     document.getElementById('save-pet-changes').setAttribute('data-index', index);
+    if (animal.sex == "Male") {
+        document.getElementById('edit-pet-gender-male').checked = true
+    }
+    else {
+        document.getElementById('edit-pet-gender-female').checked = true
+    }
+
+
 }
 
 document.getElementById('save-pet-changes').addEventListener('click', function() {
@@ -113,6 +121,12 @@ function saveEditedAnimal(index) {
     animal.breed = document.getElementById('edit-pet-breed').value;
     animal.age = document.getElementById('edit-pet-age').value;
     animal.aboutMe = document.getElementById('edit-pet-desc').value;
+    if (document.getElementById('edit-pet-gender-male').checked == true) {
+        animal.sex = "Male"
+    }
+    else {
+        animal.sex = "Female"
+    }
 
     $('#editPetModal').modal('hide');
     displayAnimals(0, animalsVisible, false);
