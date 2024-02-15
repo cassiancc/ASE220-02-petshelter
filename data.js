@@ -1,6 +1,7 @@
 let animals = [];
 let index = 0;
 const itemsPerPage = 9;
+let animalsVisible = 9;
 
 async function loadIndex() {
     try {
@@ -14,6 +15,7 @@ async function loadIndex() {
     document.getElementById("load-more").addEventListener("click", function() {
       if (index < animals.length) {
           displayAnimals(index, itemsPerPage, true); // Append the next set of animals
+          animalsVisible += itemsPerPage;
       }
       if (index >= animals.length) {
           this.style.display = 'none'; // Hide the button if all animals are displayed
@@ -86,7 +88,7 @@ function attachEventListeners() {
 
 function deleteAnimal(index) {
   animals.splice(index, 1);
-  displayAnimals(0, index, false); // Refresh the list, showing items up to the current index
+  displayAnimals(0, animalsVisible, false); // Refresh the list, showing items up to the current index
 }
 
 function fillEditModal(index) {
