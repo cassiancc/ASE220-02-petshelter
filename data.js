@@ -154,7 +154,7 @@ $('#btn-pet-add').on('click', function() {
     $('#addpetModal').modal('hide');
 });
 
-loadIndex();
+
 
 
 async function loadDetail(index) {
