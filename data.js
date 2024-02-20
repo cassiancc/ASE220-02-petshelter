@@ -21,13 +21,40 @@ async function loadIndex() {
           this.style.display = 'none'; // Hide the button if all animals are displayed
       }
   });  
-  
+  // below event listeners only need to be attached once
+  // Add Pet functionality
+$(document).on('click', '#btn-pet-add', function() {
+  let aboutMeFull = $('#add-pet-desc').val();
+  let aboutMe = aboutMeFull.split(". ")[0];
+  aboutMeFull = aboutMeFull.substring(aboutMe.length).trim();
+  const pet = {
+      name: $('#add-pet-name').val(),
+      type: $('#add-pet-type').val(),
+      breed: $('#add-pet-breed').val(),
+      sex: $('input[name="add-pet-gender"]:checked').val(),
+      age: $('#add-pet-age').val(),
+      image: $('#add-pet-image').val(),
+      aboutMe: aboutMe,
+      aboutMeFull: aboutMeFull
+  };
 
-    document.querySelector("#addpetButton").addEventListener("click", function() {
-        let modal = document.querySelector("#addpetModal");
-        var addPetModal = new bootstrap.Modal(modal, {keyboard: false});
-        addPetModal.show();
-    });
+  animals.unshift(pet);
+  displayAnimals(0, itemsPerPage);
+  $('#addpetModal').modal('hide');
+  $(".modal-backdrop").remove();
+});
+
+// every close button closes open modals
+$(document).on('click', '.btn-close', function() {
+  $('.show').modal('hide');
+  $(".modal-backdrop").remove();
+  document.body.css({overflow: 'visible'});
+});
+$(document).on('click', '.btn-secondary', function() {
+$('.show').modal('hide');
+$(".modal-backdrop").remove();
+document.body.css({overflow: 'visible'});
+});
 }
 
 function displayAnimals(start, count, append = false) {
@@ -42,7 +69,7 @@ function displayAnimals(start, count, append = false) {
       const animal = animals[i];
       let image = animal.image ? animal.image : `images/${animal.name.toLowerCase()}.webp`;
       const cardHTML = `
-          <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="col-lg-4 col-sm-6 col-md-4 mb-4">
               <div class="card h-100">
                   <img src="${image}" class="card-img-top" alt="${animal.name}">
                   <div class="card-body">
@@ -59,6 +86,8 @@ function displayAnimals(start, count, append = false) {
   }
 
   index = end; // Update the global index after appending
+
+  // every time animals are reloaded, new event listeners are attached for them
   attachEventListeners();
 }
 
@@ -84,6 +113,10 @@ function attachEventListeners() {
             deleteAnimal(index);
         });
     });
+    $(document).on('click', '#addpetButton', function() {
+     $("#addpetModal").modal('show'); 
+    });
+    
 }
 
 function deleteAnimal(index) {
@@ -108,6 +141,7 @@ function fillEditModal(index) {
 
 
 }
+
 
 document.getElementById('save-pet-changes').addEventListener('click', function() {
     const index = this.getAttribute('data-index');
@@ -147,37 +181,8 @@ function animalModalDataFill(index) {
     animalModal.show();
 }
 
-// Add Pet functionality
-$('#btn-pet-add').on('click', function() {
-    let aboutMeFull = $('#add-pet-desc').val();
-    let aboutMe = aboutMeFull.split(". ")[0];
-    aboutMeFull = aboutMeFull.substring(aboutMe.length).trim();
-    const pet = {
-        name: $('#add-pet-name').val(),
-        type: $('#add-pet-type').val(),
-        breed: $('#add-pet-breed').val(),
-        sex: $('input[name="add-pet-gender"]:checked').val(),
-        age: $('#add-pet-age').val(),
-        image: $('#add-pet-image').val(),
-        aboutMe: aboutMe,
-        aboutMeFull: aboutMeFull
-    };
 
-    animals.unshift(pet);
-    displayAnimals(0, itemsPerPage);
-    $('#addpetModal').modal('hide');
-    clearBackdrop()
-});
 
-$('#btn-pet-add-close').on('click', function() {
-    clearBackdrop()
-
-});
-
-function clearBackdrop() {
-    $(".modal-backdrop").remove();
-    $('body').style = ""
-}
 
 
 async function loadDetail(index) {
