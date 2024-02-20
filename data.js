@@ -2,10 +2,11 @@ let animals = [];
 let index = 0;
 const itemsPerPage = 9;
 let animalsVisible = 9;
+const dataLocation = "https:///jsonblob.com/api/jsonBlob/jsonblob.com/1209608571263508480"
 
 async function loadIndex() {
     try {
-        const response = await fetch("data.json");
+        const response = await fetch(dataLocation);
         animals = await response.json();
         displayAnimals(0, itemsPerPage, false);
     } catch (error) {
@@ -197,7 +198,7 @@ function animalModalDataFill(index) {
 
 async function loadDetail(index) {
     try {
-      let connection = await fetch("data.json");
+      let connection = await fetch(dataLocation);
       animals = await connection.json();
     }
     catch (error) {
