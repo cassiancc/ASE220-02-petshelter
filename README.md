@@ -25,3 +25,11 @@ Cassian Godsted - Migrated JS array to JSON file and wrote code to load from JSO
 Jeffrey Perdue - Created pagination view with read more button. Added 20 more pets to JSON data array.
 
 Christian Lane - Created a modal that pulled pet data on click.
+
+## Assignment 5
+
+Cassian Godsted - Created draft for add pet functionality based on Assignment 5 demo. Fixed bugs from event listeners and modals not fully closing. Moved new pets to beginning of array, instead of the end. Added custom image support for new pets. Fixed additional bugs resulting from new add pet, edit pet, and delete pet code.
+
+Christian Lane - Bugfixes, including duplicate index loading glitch. Code cleanup. Added code to clear pet input text after a pet has been added. 
+
+Jeffrey Perdue - Rewrote parts of the add pet code to use Jquery, added support for editing and deleting pets
