@@ -22,8 +22,8 @@ async function loadIndex() {
       }
   });  
   // below event listeners only need to be attached once
-  // Add Pet functionality
-$(document).on('click', '#btn-pet-add', function() {
+ // Add Pet functionality
+ $(document).on('click', '#btn-pet-add', function() {
   let aboutMeFull = $('#add-pet-desc').val();
   let aboutMe = aboutMeFull.split(". ")[0];
   aboutMeFull = aboutMeFull.substring(aboutMe.length).trim();
@@ -43,6 +43,18 @@ $(document).on('click', '#btn-pet-add', function() {
   $('#addpetModal').modal('hide');
   $(".modal-backdrop").remove();
 });
+$(document).on('click', '#addpetButton', function() {
+  // clear values
+  $('#add-pet-name').val(""); 
+  $('#add-pet-type').val(""); 
+  $('#add-pet-breed').val("");
+  $('#add-pet-age').val("");
+  $('#add-pet-desc').val("");
+  $('[name="add-pet-gender"]').prop("checked", false);
+ $("#addpetModal").modal('show'); 
+ 
+});
+    
 
 // every close button closes open modals
 $(document).on('click', '.btn-close', function() {
@@ -113,10 +125,8 @@ function attachEventListeners() {
             deleteAnimal(index);
         });
     });
-    $(document).on('click', '#addpetButton', function() {
-     $("#addpetModal").modal('show'); 
-    });
     
+     
 }
 
 function deleteAnimal(index) {
