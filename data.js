@@ -42,6 +42,7 @@ async function loadIndex() {
   animals.unshift(pet);
   displayAnimals(0, itemsPerPage);
   $('#addpetModal').modal('hide');
+  updateRemote()
   $(".modal-backdrop").remove();
 });
 $(document).on('click', '#addpetButton', function() {
@@ -133,6 +134,7 @@ function attachEventListeners() {
 function deleteAnimal(index) {
   animals.splice(index, 1);
   displayAnimals(0, animalsVisible, false); // Refresh the list, showing items up to the current index
+  updateRemote()
 }
 
 function fillEditModal(index) {
@@ -175,6 +177,7 @@ function saveEditedAnimal(index) {
 
     $('#editPetModal').modal('hide');
     displayAnimals(0, animalsVisible, false);
+    updateRemote()
 }
 
 function animalModalDataFill(index) {
@@ -233,3 +236,19 @@ async function loadDetail(index) {
     </div>
     `;
   }
+
+
+function updateRemote() {
+    $.ajax({
+        url: dataLocation,
+        type: 'PUT',
+        contentType:'application/json',
+        data: JSON.stringify(animals),
+        success: function(result) {
+            console.log("Remote updated")
+        },
+        error: function(result) {
+            console.log(result)
+        }
+    })
+}
