@@ -33,3 +33,11 @@ Cassian Godsted - Created draft for add pet functionality based on Assignment 5 
 Christian Lane - Bugfixes, including duplicate index loading glitch. Code cleanup. Added code to clear pet input text after a pet has been added. 
 
 Jeffrey Perdue - Rewrote parts of the add pet code to use Jquery, added support for editing and deleting pets
+
+## Assignment 6
+
+Cassian Godsted - Changed code to send GET requests to Jsonblob instead of local file, wrote code to send PUT requests to Jsonblob whenever a pet is added, edited or deleted.
+
+Christian Lane - 
+
+Jeffrey Perdue - 
