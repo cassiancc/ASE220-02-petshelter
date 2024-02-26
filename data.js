@@ -189,7 +189,7 @@ function animalModalDataFill(index) {
     let footer = modal.querySelector(".modal-footer");
     footer.innerHTML = `
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href="/ASE220-02-petshelter/detail.html?index=${index}"><button type="button" class="btn btn-primary">Learn more about ${animal.name}</button></a>
+        <a href="/detail.html?index=${index}"><button type="button" class="btn btn-primary">Learn more about ${animal.name}</button></a>
     `;
 
     animalModal.show();
